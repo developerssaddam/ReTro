@@ -28,6 +28,7 @@
             colors: {
               clifford: "#da373d",
               btnBg: "#797DFC",
+              cardBg: "#F3F3F5",
             },
           },
         },
@@ -171,6 +172,123 @@
               Yes, you can run unit tests and view the results directly within
               the app. The integrated testing features allow for a streamlined .
             </p>
+          </div>
+        </div>
+
+        <!--All Card Container-->
+        <div class="all_card_container flex flex-col md:flex-row gap-5">
+          <!--left card container-->
+
+          <div id="left_card_container">
+            <!--Card-Item-->
+            <div
+              class="left_card_item flex gap-2 md:gap-3 lg:gap-5 p-4 lg:p-8 bg-cardBg rounded-3xl mb-3"
+            >
+              <div class="profile_info relative">
+                <div class="w-10 h-10 rounded-xl bg-white p-1">
+                  <img src="img/Saddam1.jpg" alt="" />
+                </div>
+                <div
+                  class="indicator bg-red-500 absolute top-[-2px] right-[-2px]"
+                ></div>
+              </div>
+              <div class="info">
+                <div
+                  class="main_info flex gap-3 font_inter font-medium text-sm mb-2"
+                >
+                  <p>Category #Music</p>
+                  <p>Author: <span>Saddam</span></p>
+                </div>
+                <h2
+                  class="title text-base md:text-lg font-bold text-[#12132D] mb-2"
+                >
+                  10 Kids Unaware of Their Halloween Costume
+                </h2>
+                <p class="desc font_inter border-b-2 border-dashed mb-4 pb-4">
+                  It’s one thing to subject yourself to ha Halloween costume
+                  mishap because, hey that’s your prerogative
+                </p>
+                <div class="view_info flex justify-between">
+                  <div class="flex gap-4 text-[#6C6C7D]">
+                    <p>
+                      <i class="fa-regular fa-message"></i>
+                      <span>555</span>
+                    </p>
+
+                    <p>
+                      <i class="fa-regular fa-eye"></i>
+                      <span>555</span>
+                    </p>
+
+                    <p>
+                      <i class="fa-regular fa-clock"></i>
+                      <span>5 min</span>
+                    </p>
+                  </div>
+                  <div>
+                    <button>
+                      <i
+                        class="fa-regular fa-envelope-open bg-[#10B981] p-2 rounded-full text-white"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--right card container-->
+          <div
+            id="right_card_container"
+            class="bg-cardBg rounded-3xl p-4 md:p-5 lg:p-8 mb-4"
+          >
+            <div class="title flex justify-between mb-5">
+              <h2 class="font-bold text-lg">Title</h2>
+              <p class="font_inter">
+                <i class="fa-solid fa-check-double mr-2 text-[#10B981]"></i>
+                Mark as read (<span>4</span>)
+              </p>
+            </div>
+            <div id="item_container">
+              <!--Card Item-->
+              <div
+                class="right_card_item bg-white p-3 md:p-4 lg:p-5 rounded-2xl flex gap-2 md:gap-4 justify-between items-center mb-3"
+              >
+                <h2 class="font-semibold">
+                  10 Kids Unaware of Their Halloween Costume
+                </h2>
+                <p class="text-[#717181] flex items-center gap-2 md:gap-3">
+                  <i class="fa-regular fa-eye"></i>
+                  <span>1568</span>
+                </p>
+              </div>
+
+              <!--Card Item-->
+              <div
+                class="right_card_item bg-white p-3 md:p-4 lg:p-5 rounded-2xl flex gap-2 md:gap-4 justify-between items-center mb-3"
+              >
+                <h2 class="font-semibold">
+                  10 Kids Unaware of Their Halloween Costume
+                </h2>
+                <p class="text-[#717181] flex items-center gap-2 md:gap-3">
+                  <i class="fa-regular fa-eye"></i>
+                  <span>1568</span>
+                </p>
+              </div>
+
+              <!--Card Item-->
+              <div
+                class="right_card_item bg-white p-3 md:p-4 lg:p-5 rounded-2xl flex gap-2 md:gap-4 justify-between items-center mb-3"
+              >
+                <h2 class="font-semibold">
+                  10 Kids Unaware of Their Halloween Costume
+                </h2>
+                <p class="text-[#717181] flex items-center gap-2 md:gap-3">
+                  <i class="fa-regular fa-eye"></i>
+                  <span>1568</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
