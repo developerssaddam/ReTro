@@ -3,6 +3,7 @@ const left_card_container = document.getElementById("left_card_container");
 const latest_post_cart_container = document.getElementById(
   "latest_post_cart_container"
 );
+const searchField = document.getElementById("searchField");
 // GetAllPostData.
 const getAllPostData = () => {
   // showLoading-spinner.
@@ -122,28 +123,19 @@ const getAllLatestPost = async () => {
 const showLatestPost = async (data) => {
   latest_post_cart_container.innerHTML = "";
   data.map((item) => {
-    console.log(data);
-
     const { cover_image, profile_image, title, description, author } = item;
 
-    let postDate = ''
+    let postDate = "";
     // Check Posted Date.
-    if(author?.posted_date){
-      postDate = author.posted_date;
-    }else{
-      postDate = "No date found"
-    }
-
+    author?.posted_date
+      ? (postDate = author.posted_date)
+      : (postDate = "No publish date");
 
     // Check designation.
-    let designation = '';
-    if(author?.designation){
-      designation = author.designation;
-    }else{
-      designation = "Unknown"
-    }
-
-
+    let designation = "";
+    author?.designation
+      ? (designation = author.designation)
+      : (designation = "Unknown");
 
     // create a card div.
     const cardDiv = document.createElement("div");
@@ -162,11 +154,10 @@ const showLatestPost = async (data) => {
             <span>${postDate}</span>
           </h3>
           <h2 class="title text-lg font-extrabold">
-            What will a mars habitat force that impact in our daily life!!!
+            ${title}
           </h2>
           <p class="desc text-[#717181]">
-            Yes, you can run unit tests and view the results directly within
-            the app.
+            ${description}
           </p>
         </div>
         <div class="author_info flex gap-3 items-center mt-3">
@@ -180,6 +171,28 @@ const showLatestPost = async (data) => {
         </div>`;
     latest_post_cart_container.appendChild(cardDiv);
   });
+};
+
+// Get PostData by category.
+const getCategoryData = async (category) => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`
+  );
+
+  const data = await res.json();
+  const getCategory = data.posts;
+  showAllPost(getCategory);
+};
+
+// Clicked search BTN.
+const searchBtnClicked = () => {
+  // Get inputText.
+  const inputText = searchField.value;
+  // Validation.
+  if (!inputText) {
+    alert("Please input your search!");
+  }
+  getCategoryData(inputText);
 };
 
 getAllPostData();
