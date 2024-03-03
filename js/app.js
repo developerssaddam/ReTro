@@ -1,5 +1,8 @@
 const loadingSpinner = document.getElementById("loading_spinner");
 const left_card_container = document.getElementById("left_card_container");
+const latest_post_cart_container = document.getElementById(
+  "latest_post_cart_container"
+);
 // GetAllPostData.
 const getAllPostData = () => {
   // showLoading-spinner.
@@ -20,8 +23,6 @@ const showAllPost = (postData) => {
   // Clear previousData.
   left_card_container.innerHTML = "";
 
-  // hide loading spinner.
-  loadingSpinner.classList.add("hidden");
   postData.map((item) => {
     const {
       category,
@@ -104,6 +105,82 @@ const showAllPost = (postData) => {
             </div>`;
     left_card_container.appendChild(allPostCardDiv);
   });
+  // hide loading spinner.
+  loadingSpinner.classList.add("hidden");
+};
+
+// GetAll Latest PostData.
+const getAllLatestPost = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+  );
+  const data = await res.json();
+  showLatestPost(data);
+};
+
+// Show LatestPost.
+const showLatestPost = async (data) => {
+  latest_post_cart_container.innerHTML = "";
+  data.map((item) => {
+    console.log(data);
+
+    const { cover_image, profile_image, title, description, author } = item;
+
+    let postDate = ''
+    // Check Posted Date.
+    if(author?.posted_date){
+      postDate = author.posted_date;
+    }else{
+      postDate = "No date found"
+    }
+
+
+    // Check designation.
+    let designation = '';
+    if(author?.designation){
+      designation = author.designation;
+    }else{
+      designation = "Unknown"
+    }
+
+
+
+    // create a card div.
+    const cardDiv = document.createElement("div");
+    cardDiv.className = `post_cart border-2 border-[#F3F3F4] p-5 rounded-2xl shadow-lg`;
+
+    // CardDiv InnerHTML.
+    cardDiv.innerHTML = `
+        <img
+        class="rounded-2xl mb-6"
+        src="${cover_image}"
+        alt="Latest post img"/>
+
+        <div class="info space-y-2">
+          <h3 class="text-[#717181]">
+            <i class="fa-regular fa-calendar"></i>
+            <span>${postDate}</span>
+          </h3>
+          <h2 class="title text-lg font-extrabold">
+            What will a mars habitat force that impact in our daily life!!!
+          </h2>
+          <p class="desc text-[#717181]">
+            Yes, you can run unit tests and view the results directly within
+            the app.
+          </p>
+        </div>
+        <div class="author_info flex gap-3 items-center mt-3">
+          <div class="w-12 h-12 rounded-full border border-[#717181] p-[1px]">
+            <img class="rounded-full" src="${profile_image}" alt="Profile img" />
+          </div>
+          <div>
+            <h2 class="font-bold">${author.name}</h2>
+            <p class="text-[#717181] text-sm">${designation}</p>
+          </div>
+        </div>`;
+    latest_post_cart_container.appendChild(cardDiv);
+  });
 };
 
 getAllPostData();
+getAllLatestPost();
