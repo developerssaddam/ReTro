@@ -37,6 +37,8 @@ const showAllPost = (postData) => {
       posted_time,
     } = item;
 
+    console.log(title);
+
     // Check isActive.
     let color = "";
     if (isActive) {
@@ -96,7 +98,7 @@ const showAllPost = (postData) => {
                     </p>
                   </div>
                   <div>
-                    <button>
+                    <button onclick="clickedCardItem('${title}, ${view_count}')">
                       <i
                         class="fa-regular fa-envelope-open bg-[#10B981] p-2 rounded-full text-white"
                       ></i>
@@ -193,6 +195,11 @@ const searchBtnClicked = () => {
     alert("Please input your search!");
   }
   getCategoryData(inputText);
+};
+
+// Clicked card Item.
+const clickedCardItem = (title, view_count) => {
+  console.log(title, view_count);
 };
 
 getAllPostData();
