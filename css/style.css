@@ -24,17 +24,17 @@ body {
   border-radius: 50%;
 }
 
-li{
+.social_area ul li {
   list-style: none;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   padding: 3px;
-  background-color: #FFF;
+  background-color: #fff;
   cursor: pointer;
 }
 
-li:hover{
-  background-color: #797DFC;
+.social_area ul li:hover {
+  background-color: #797dfc;
   color: #fff;
 }
