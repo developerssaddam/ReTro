@@ -4,6 +4,9 @@ const latest_post_cart_container = document.getElementById(
   "latest_post_cart_container"
 );
 const searchField = document.getElementById("searchField");
+const item_container = document.getElementById("item_container");
+const countTag = document.getElementById("countTag");
+
 // GetAllPostData.
 const getAllPostData = () => {
   // showLoading-spinner.
@@ -36,8 +39,6 @@ const showAllPost = (postData) => {
       view_count,
       posted_time,
     } = item;
-
-    console.log(title);
 
     // Check isActive.
     let color = "";
@@ -98,7 +99,7 @@ const showAllPost = (postData) => {
                     </p>
                   </div>
                   <div>
-                    <button onclick="clickedCardItem('${title}, ${view_count}')">
+                    <button onclick="clickedCardItem('${title}', '${view_count}')">
                       <i
                         class="fa-regular fa-envelope-open bg-[#10B981] p-2 rounded-full text-white"
                       ></i>
@@ -198,8 +199,27 @@ const searchBtnClicked = () => {
 };
 
 // Clicked card Item.
-const clickedCardItem = (title, view_count) => {
-  console.log(title, view_count);
+const clickedCardItem = (data, view_count) => {
+  // Create a div
+  const itemDiv = document.createElement("div");
+  itemDiv.className =
+    "right_card_item bg-white p-3 md:p-4 lg:p-5 rounded-2xl flex gap-2 md:gap-4 justify-between items-center mb-3 shadow-lg";
+
+  itemDiv.innerHTML = `
+      <h2 class="font-semibold">
+          ${data}
+      </h2>
+      <p class="text-[#717181] flex items-center gap-2 md:gap-3">
+          <i class="fa-regular fa-eye"></i>
+          <span>${view_count}</span>
+      </p>`;
+
+  item_container.appendChild(itemDiv);
+
+  // Count mark as reak
+  const countText = countTag.innerText;
+  const count = parseInt(countText);
+  countTag.innerText = count + 1;
 };
 
 getAllPostData();
