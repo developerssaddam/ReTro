@@ -112,6 +112,14 @@
     <!--Header end-->
     <!--Main start-->
     <main class="container mx-auto">
+      <!--Loading Spinner-->
+      <div
+        id="loading_spinner"
+        class="flex justify-center items-center h-[550px] hidden"
+      >
+        <span class="loading loading-spinner loading-lg"></span>
+      </div>
+
       <!--Banner Section-->
       <section
         class="banner flex flex-col md:flex-row gap-10 justify-between items-center p-8 md:p-14 lg:p-32 rounded-3xl mb-10 md:mb-20 lg:mb-32"
@@ -182,18 +190,22 @@
 
           <div id="left_card_container">
             <!--Card-Item-->
-            <div
-              class="left_card_item flex gap-2 md:gap-3 lg:gap-5 p-4 lg:p-8 bg-cardBg rounded-3xl mb-4 shadow-lg"
+            <!-- <div
+              class="left_card_item flex flex-col md:flex-row gap-2 md:gap-3 lg:gap-5 p-4 lg:p-8 bg-cardBg rounded-3xl mb-4 shadow-lg"
             >
-              <div class="profile_info relative">
-                <div class="w-16 h-16 rounded-xl bg-white p-1">
-                  <img src="img/Saddam1.jpg" alt="" />
+              <div class="profile_info relative w-16">
+                <div class="w-16 h-16 rounded-xl bg-white">
+                  <img
+                    class="w-full h-full rounded-xl"
+                    src="img/1.avif"
+                    alt=""
+                  />
                 </div>
                 <div
-                  class="indicator bg-red-500 absolute top-[-2px] right-[-2px]"
+                  class="indicator bg-red-500 absolute top-[-5px] right-[-5px]"
                 ></div>
               </div>
-              <div class="info">
+              <div class="info flex-1">
                 <div
                   class="main_info flex gap-3 font_inter font-medium text-sm mb-2"
                 >
@@ -203,11 +215,10 @@
                 <h2
                   class="title text-base md:text-lg font-bold text-[#12132D] mb-2"
                 >
-                  10 Kids Unaware of Their Halloween Costume
+                  10 Kids Unaware alloween Costume
                 </h2>
                 <p class="desc font_inter border-b-2 border-dashed mb-4 pb-4">
-                  It’s one thing to subject yourself to ha Halloween costume
-                  mishap because, hey that’s your prerogative
+                  It’s one thing to subject yourserogative
                 </p>
                 <div class="view_info flex justify-between">
                   <div class="flex gap-4 text-[#6C6C7D]">
@@ -235,7 +246,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <!--right card container-->
@@ -304,7 +315,9 @@
           class="post_cart_container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           <!--Latest post item-->
-          <div class="post_cart border-2 border-[#F3F3F4] p-5 rounded-2xl shadow-lg">
+          <div
+            class="post_cart border-2 border-[#F3F3F4] p-5 rounded-2xl shadow-lg"
+          >
             <img
               class="rounded-2xl mb-6"
               src="img/1.avif"
