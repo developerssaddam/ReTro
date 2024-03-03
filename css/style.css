@@ -23,3 +23,18 @@ body {
   height: 8px;
   border-radius: 50%;
 }
+
+li{
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+li:hover{
+  background-color: #797DFC;
+  color: #fff;
+}

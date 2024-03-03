@@ -294,23 +294,106 @@
       </section>
 
       <!--Join Our Forum -->
-      <section class="join_our_forum bg-[#12132d] p-10 lg:p-20 flex flex-col md:flex-row gap-10 items-center rounded-3xl">
+      <section
+        class="join_our_forum bg-[#12132d] p-10 lg:p-20 flex flex-col md:flex-row gap-10 items-center rounded-3xl my-28"
+      >
         <div class="text-white space-y-4">
           <h2 class="text-4xl font-black">Join Our Forum</h2>
           <p class="text-[#D0D0D5]">
             Share your favorite opinion and win and wp forum coffee mug! Yes,
             you can run unit tests and view the results directly within the app.
           </p>
-          <button class="font-bold bg-btnBg px-5 rounded-full py-2">Registered Now</button>
+          <button class="font-bold bg-btnBg px-5 rounded-full py-2">
+            Registered Now
+          </button>
         </div>
         <div>
           <img src="img/joinforum.png" alt="" />
         </div>
       </section>
+
+      <!--Latest Post-->
+      <section class="latest_post">
+        <!--Section title-->
+        <div class="section_title flex justify-center">
+          <div class="text-center space-y-5 mb-10 max-w-[550px] p-2">
+            <h2 class="text-4xl text-[#12132D] font-black">Latest Posts</h2>
+            <p class="text-[#717181] font_inter">
+              Yes, you can run unit tests and view the results directly within
+              the app. The integrated testing features allow for a streamlined .
+            </p>
+          </div>
+        </div>
+        <!--Post cart container-->
+        <div
+          class="post_cart_container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          <!--Latest post item-->
+          <div class="post_cart border-2 border-[#F3F3F4] p-5 rounded-2xl">
+            <img
+              class="rounded-2xl mb-6"
+              src="img/1.avif"
+              alt="Latest post img"
+            />
+
+            <div class="info space-y-2">
+              <h3 class="text-[#717181]">
+                <i class="fa-regular fa-calendar"></i>
+                <span>14 january 2024</span>
+              </h3>
+              <h2 class="title text-lg font-extrabold">
+                What will a mars habitat force that impact in our daily life!!!
+              </h2>
+              <p class="desc text-[#717181]">
+                Yes, you can run unit tests and view the results directly within
+                the app.
+              </p>
+            </div>
+            <div class="author_info flex gap-3 items-center mt-3">
+              <div class="w-8 h-8 rounded-full border border-[#717181] p-[1px]">
+                <img src="img/joinforum.png" alt="" />
+              </div>
+              <div>
+                <h2 class="font-bold">Cameron Williamson</h2>
+                <p class="text-[#717181] text-sm">Unknown</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!--Main end-->
     <!--Footer start-->
-    <footer></footer>
+    <footer class="bg-[#F7F7F8] p-5 mt-20 md:p-16 lg:p-24">
+      <!--Section title-->
+      <div class="section_title flex justify-center">
+        <div class="text-center space-y-5 mb-10 max-w-[550px] p-2">
+          <h2 class="text-4xl text-[#12132D] font-black">ReTro</h2>
+          <p class="text-[#717181] font_inter">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC
+          </p>
+          <div class="social_area flex justify-center">
+            <ul class="flex gap-5">
+              <li>
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+              <li>
+                <i class="fa-brands fa-facebook-f"></i>
+              </li>
+              <li>
+                <i class="fa-brands fa-instagram"></i>
+              </li>
+              <li>
+                <i class="fa-brands fa-github"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="font-light text-[#878895] text-sm text-center pt-12">2024, All Rights Reserved.</p>
+    </footer>
     <!--Footer end-->
 
     <script src="js/app.js"></script>
