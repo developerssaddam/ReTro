@@ -42,15 +42,12 @@ const showAllPost = (postData) => {
 
     // Check isActive.
     let color = "";
-    if (isActive) {
-      color = "bg-green-500";
-    } else {
-      color = "bg-red-500";
-    }
+    isActive ? (color = "bg-green-500") : (color = "bg-red-500");
 
     // Create allPost card.
     const allPostCardDiv = document.createElement("div");
-    allPostCardDiv.className = `left_card_item flex flex-col md:flex-row gap-2 md:gap-3 lg:gap-5 p-4 lg:p-8 bg-cardBg rounded-3xl mb-4 shadow-lg`;
+    allPostCardDiv.className =
+      "left_card_item flex flex-col md:flex-row gap-2 md:gap-3 lg:gap-5 p-4 lg:p-8 bg-cardBg rounded-3xl mb-4 shadow-lg";
 
     // Card div innerHTML.
     allPostCardDiv.innerHTML = `
@@ -99,7 +96,9 @@ const showAllPost = (postData) => {
                     </p>
                   </div>
                   <div>
-                    <button onclick="clickedCardItem('${title}', '${view_count}')">
+                    <button onclick="clickedCardItem(('${title.split(
+                      "'"
+                    )}'), ('${view_count}'))">
                       <i
                         class="fa-regular fa-envelope-open bg-[#10B981] p-2 rounded-full text-white"
                       ></i>
@@ -200,6 +199,7 @@ const searchBtnClicked = () => {
 
 // Clicked card Item.
 const clickedCardItem = (data, view_count) => {
+  const title = data.split(",").join("'");
   // Create a div
   const itemDiv = document.createElement("div");
   itemDiv.className =
@@ -207,7 +207,7 @@ const clickedCardItem = (data, view_count) => {
 
   itemDiv.innerHTML = `
       <h2 class="font-semibold">
-          ${data}
+          ${title}
       </h2>
       <p class="text-[#717181] flex items-center gap-2 md:gap-3">
           <i class="fa-regular fa-eye"></i>
@@ -224,3 +224,9 @@ const clickedCardItem = (data, view_count) => {
 
 getAllPostData();
 getAllLatestPost();
+
+{
+  /* <button onclick="clickedCardItem(${JSON.stringify(title)}, ${JSON.stringify(view_count)})">
+    <i class="fa-regular fa-envelope-open bg-[#10B981] p-2 rounded-full text-white"></i>
+</button> */
+}
