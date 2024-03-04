@@ -39,7 +39,7 @@
   </head>
   <body>
     <!--Header start-->
-    <header class="container mx-auto mb-10">
+    <header class="container mx-auto mb-4 md:mb-10">
       <!-- Navbar -->
       <nav>
         <div class="navbar bg-base-100">
@@ -112,14 +112,6 @@
     <!--Header end-->
     <!--Main start-->
     <main class="container mx-auto">
-      <!--Loading Spinner-->
-      <div
-        id="loading_spinner"
-        class="flex justify-center items-center h-[550px] hidden"
-      >
-        <span class="loading loading-spinner loading-lg"></span>
-      </div>
-
       <!--Banner Section-->
       <section
         class="banner flex flex-col md:flex-row gap-10 justify-between items-center p-8 md:p-14 lg:p-32 rounded-3xl mb-10 md:mb-20 lg:mb-32"
@@ -186,8 +178,18 @@
           </div>
         </div>
 
+        <!--Loading Spinner-->
+        <div
+          id="loading_spinner"
+          class="flex justify-center items-center hidden"
+        >
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
+
         <!--All Card Container-->
-        <div class="all_card_container flex flex-col md:flex-row gap-5">
+        <div
+          class="all_card_container flex flex-col md:flex-row justify-center gap-5"
+        >
           <!--left card container-->
           <div id="left_card_container"></div>
 
@@ -196,7 +198,7 @@
             id="right_card_container"
             class="bg-cardBg rounded-3xl p-4 md:p-5 lg:p-8 mb-4"
           >
-            <div class="title flex justify-between gap-40 mb-5">
+            <div class="title flex justify-between gap-10 mb-5">
               <h2 class="font-bold text-lg">Title</h2>
               <p class="font_inter">
                 <i class="fa-solid fa-check-double mr-2 text-[#10B981]"></i>
@@ -210,7 +212,7 @@
 
       <!--Join Our Forum -->
       <section
-        class="join_our_forum bg-[#12132d] p-10 lg:p-20 flex flex-col md:flex-row gap-10 items-center rounded-3xl my-28"
+        class="join_our_forum bg-[#12132d] p-10 lg:p-20 flex flex-col md:flex-row gap-10 items-center rounded-3xl my-10 md:my-20 lg:my-28"
       >
         <div class="text-white space-y-4">
           <h2 class="text-4xl font-black">Join Our Forum</h2>

@@ -24,6 +24,9 @@ const getAllPostData = () => {
 
 // Show All Post data.
 const showAllPost = (postData) => {
+  // hide loading spinner.
+  loadingSpinner.classList.add("hidden");
+
   // Clear previousData.
   left_card_container.innerHTML = "";
 
@@ -108,8 +111,6 @@ const showAllPost = (postData) => {
             </div>`;
     left_card_container.appendChild(allPostCardDiv);
   });
-  // hide loading spinner.
-  loadingSpinner.classList.add("hidden");
 };
 
 // GetAll Latest PostData.
@@ -177,17 +178,21 @@ const showLatestPost = async (data) => {
 
 // Get PostData by category.
 const getCategoryData = async (category) => {
-  const res = await fetch(
-    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`
-  );
+  setTimeout(async () => {
+    const res = await fetch(
+      `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`
+    );
 
-  const data = await res.json();
-  const getCategory = data.posts;
-  showAllPost(getCategory);
+    const data = await res.json();
+    const getCategory = data.posts;
+    showAllPost(getCategory);
+  }, 2000);
 };
 
 // Clicked search BTN.
 const searchBtnClicked = () => {
+  loadingSpinner.classList.remove("hidden");
+
   // Get inputText.
   const inputText = searchField.value;
   // Validation.
@@ -224,9 +229,3 @@ const clickedCardItem = (data, view_count) => {
 
 getAllPostData();
 getAllLatestPost();
-
-{
-  /* <button onclick="clickedCardItem(${JSON.stringify(title)}, ${JSON.stringify(view_count)})">
-    <i class="fa-regular fa-envelope-open bg-[#10B981] p-2 rounded-full text-white"></i>
-</button> */
-}
